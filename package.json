@@ -1,0 +1,87 @@
+{
+  "name": "root",
+  "private": true,
+  "repository": {},
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "release": "lerna publish from-package --yes --dist-tag next",
+    "start": "dumi dev",
+    "test": "jest --coverage",
+    "test:prod": "jest --coverage --silent",
+    "preversion": "yarn install --ignore-engines && npm run build && npm run lint",
+    "version:alpha": "lerna version prerelease --preid alpha",
+    "version:beta": "lerna version prerelease --preid beta",
+    "version:major": "lerna version major",
+    "version:minor": "lerna version minor",
+    "version:patch": "lerna version patch",
+    "version:preminor": "lerna version preminor --preid beta",
+    "version:rc": "lerna version prerelease --preid rc"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint --ext .ts,.tsx,.js",
+      "pretty-quick --staged",
+      "git add"
+    ],
+    "*.md": [
+      "pretty-quick --staged",
+      "git add"
+    ]
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --edit"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/prompt-cli": "^17.3.0",
+    "@formily/template": "^1.0.0-alpha.21",
+    "@testing-library/jest-dom": "^5.0.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fs-extra": "^10.1.0",
+    "ghooks": "^2.0.4",
+    "glob": "^8.0.3",
+    "jest": "^26.0.0",
+    "jest-codemods": "^0.19.1",
+    "jest-dom": "^3.1.2",
+    "jest-localstorage-mock": "^2.3.0",
+    "jest-styled-components": "6.3.3",
+    "jest-watch-lerna-packages": "^1.1.0",
+    "lerna": "^6.0.0",
+    "lint-staged": "^13.0.4",
+    "mfetch": "^0.2.27",
+    "prettier": "^2.2.1",
+    "pretty-format": "^29.3.1",
+    "pretty-quick": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^3.0.0",
+    "staged-git-files": "^1.1.2",
+    "ts-jest": "^26.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.1.5"
+  }
+}

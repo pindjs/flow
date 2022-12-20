@@ -1,0 +1,11 @@
+{
+  "name": "@pind/flow-react",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib",
+  "types": "lib/index.d.ts",
+  "module": "esm",
+  "jsnext:main": "esm",
+  "scripts": {},
+  "peerDependencies": {}
+}
