@@ -7,5 +7,10 @@
   "module": "esm",
   "jsnext:main": "esm",
   "scripts": {},
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "dependencies": {
+    "@antv/x6": "^2.0.0",
+    "@antv/x6-plugin-dnd": "^2.0.0",
+    "@formily/reactive": "^2.2.0"
+  }
 }

@@ -7,5 +7,10 @@
   "module": "esm",
   "jsnext:main": "esm",
   "scripts": {},
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "dependencies": {
+    "@antv/x6": "^2.0.0",
+    "@antv/x6-react-shape": "^2.0.0",
+    "@pind/flow-designer-core": "^0.1.0"
+  }
 }

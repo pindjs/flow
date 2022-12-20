@@ -17,7 +17,7 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@formily/antd": ["packages/components/src"]
+      "@pind/flow-*": ["./packages/*/src"]
     },
     "lib": ["ESNext", "DOM"]
   }
